@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body class="bg-info">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1 style="color:white">Belly Button Biodiversity Dashboard</h1>
+        <p style="color:white">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well">
+        <p>
+          We want to obtain a better understanding of the bacteria we are exploring from each subject by graph visualization to make our understanding easier. Having the data presented in a bar chart and bubble chart will help us to obtain a better comparison between all the different subjects.
+        </p>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="well">
+          <h5>Select the graph:</h5>
+          <select id="selGraph" onchange="optionChartChanged()"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <div class="well col-md-8 text-center" >
+        <p id="bar-text">
+          This graph represents the top 10 bacteria present
+          in each subject. 
+        </p>
+      </div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <div class="well col-md-8 text-center">
+          <p>
+            We can see, based on an individual's declared cleaning habits, from optimal to the least optimal cleaning habits.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="well col-md-12">
+        <div id="bubble"></div>
+        <div class="col-md-12 text-center">
+          <p id="bubble-text">
+            We can represent all the bacteria present by each subject, depending on the value, and based on its ids, in order to better understand each category the information is grouped by different colors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
